@@ -5,7 +5,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
-LOCAL_PACKAGE_NAME := CMWimaxSettings
+LOCAL_PACKAGE_NAME := WimaxSettings
 LOCAL_CERTIFICATE := platform
 
 LOCAL_REQUIRED_MODULES := libwimax_jni
