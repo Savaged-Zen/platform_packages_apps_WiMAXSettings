@@ -155,7 +155,7 @@ public class WimaxEnabler implements Preference.OnPreferenceChangeListener {
                     + getHumanReadableWimaxStatus(wimaxStatus));
         }
 
-        boolean wimaxSavedState = Settings.Secure.getInt(mContext.getContentResolver(),
+	boolean wimaxSavedState = Settings.Secure.getInt(mContext.getContentResolver(),
             Settings.Secure.WIMAX_ON, 0) == 1;
 
         if (wimaxStatus == WIMAX_ENABLED_STATE_DISABLED
@@ -169,14 +169,15 @@ public class WimaxEnabler implements Preference.OnPreferenceChangeListener {
             mWimaxCheckBoxPref.setEnabled(isEnabledByDependency());
 
             if (wimaxStatus == WIMAX_ENABLED_STATE_DISABLED) {
-                Settings.Secure.putInt(mContext.getContentResolver(),
+		Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.WIMAX_ON, 0);
                 // mWimaxController.disconnectFromDcs();
                 // ConnectivityManager cManager =
                 // (ConnectivityManager)this.mContext.getSystemService("connectivity");
                 // cManager.resetWimaxService();
-            } else if (wimaxStatus == WIMAX_ENABLED_STATE_ENABLED) {
-                Settings.Secure.putInt(mContext.getContentResolver(),
+            }
+	    else if (wimaxStatus == WIMAX_ENABLED_STATE_ENABLED) {
+		Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.WIMAX_ON, 1);
             }
 
